@@ -24,14 +24,7 @@ async function processEvent(triggeredEvent, finalCallback) {
   const { body } = triggeredEvent;
   const box = new Box(body);
 
-  try {
-      const containsMetadata = await box.containsSkillsMetadata() // Check if the file already has a Skills card
-
-      if (containsMetadata) {
-        console.log('Deleting existing Skills card.');
-        await box.deleteExistingMetadata();
-      } 
-        
+  try {  
       const tempFilePath = await box.downloadFileFromBox();
       const rossumMetadata = await sendToRossum(tempFilePath)
 

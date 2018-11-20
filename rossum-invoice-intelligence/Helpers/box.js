@@ -3,48 +3,15 @@ const fs = require('fs')
 const BoxSDK = require('box-node-sdk');
 const { FilesReader, SkillsWriter } = require('../skills-kit-lib/skills-kit-2.0');
 const SKILLS_CARDS_TEMPLATE = 'boxSkillsCards';
-const BOX_SKILL_NAME = 'CustomBoxInvoiceSkill';
 const TEMP_PATH = '/tmp/temp.pdf'
 
 class Box {
 
   constructor(fileInfo) {
-    const {source, token} = JSON.parse(fileInfo);
-    
-    this.token = token;
-    this.fileId = source.id;
     this.filesReader = new FilesReader(fileInfo);
     this.skillsWriter = new SkillsWriter(this.filesReader.getFileContext());
-    this.boxSdk = new BoxSDK({ clientID: 'u9ycy4t2d2u0yq078zn0vaemprqqwcn3', clientSecret: 'k5nbP2WzwothXXtrmZJPYY9RtxyTKLzm' });
   }
 
-  /**
-   * Check if file already has skills metadata attached.
-   * @return {boolean} - file metadata status, true or false
-   */
-  async containsSkillsMetadata() {
-    const client = this.boxSdk.getBasicClient(this.token.read.access_token);
-    let hasMetadata = false;
-
-    try {
-      const metadata = await client.files.getMetadata(this.fileId,
-        client.metadata.scopes.GLOBAL,
-        SKILLS_CARDS_TEMPLATE)
-
-      if(metadata.cards) {
-        hasMetadata = true;
-      }
-    } catch(error) {
-      console.log("Skills metadata does not yet exist");
-    }
-
-    return hasMetadata;
-  }
-  
-  async deleteExistingMetadata() {
-    const client = this.boxSdk.getBasicClient(this.token.write.access_token);
-    const result = await client.files.deleteMetadata(this.fileId, client.metadata.scopes.GLOBAL, SKILLS_CARDS_TEMPLATE);
-  }
   /**
    * Download Document from Box using the Skills Kit FilesReader class.
    */
