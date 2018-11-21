@@ -1,4 +1,4 @@
-![Rossum Custom Skill](/sample_rossum_custom_skill.png)
+![Rossum Custom Skill](./sample_rossum_custom_skill.png)
 
 # Frequently Asked Questions
 
@@ -23,19 +23,3 @@ The metadata is then posted as a Box Skills Transcript card. Some more info on S
 
 ## What far-reaching implications does this have for my business?
 Using Box with Rossum has the potential to eliminate enormous ammounts of manual data entry using automated data capture that matches human levels of accuracy. But this is only half of story! The Box API then allows you to kick off all manner of tailored workflows based on the returned metadata. Copying and moving files, flagging unpaid invoices, adding retention policies based on dates: we can now bring heightened levels of automation to bear on all of these tasks.
-
-
-
-Copyright 2018 Box, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
