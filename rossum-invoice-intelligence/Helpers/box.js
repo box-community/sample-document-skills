@@ -1,15 +1,12 @@
 
 const fs = require('fs')
-const BoxSDK = require('box-node-sdk');
-const { FilesReader, SkillsWriter } = require('../skills-kit-lib/skills-kit-2.0');
-const SKILLS_CARDS_TEMPLATE = 'boxSkillsCards';
 const TEMP_PATH = '/tmp/temp.pdf'
 
 class Box {
 
-  constructor(fileInfo) {
-    this.filesReader = new FilesReader(fileInfo);
-    this.skillsWriter = new SkillsWriter(this.filesReader.getFileContext());
+  constructor(filesReader, skillsWriter) {
+    this.filesReader = filesReader;
+    this.skillsWriter = skillsWriter;
   }
 
   /**

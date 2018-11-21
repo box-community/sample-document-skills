@@ -1,17 +1,21 @@
 
 const Box = require('./Helpers/box.js')
 const Rossum = require('./Helpers/rossum.js');
+const { FilesReader, SkillsWriter, SkillsErrorEnum } = require('./skills-kit-lib/skills-kit-2.0');
 
 /**
  * This is the main function that the Lambda will call when invoked.
  */
 exports.handler = async (triggeredEvent, context, callback) => {
-  console.log('Event received. Huzzah!');
-  
+  const { fileInfo } = triggeredEvent;
+  const filesReader = new FilesReader(fileInfo);
+  const skillsWriter = new SkillsWriter(filesReader.getFileContext());
+
   if (isValidEvent(triggeredEvent)) {
-    await processEvent(triggeredEvent, callback);
+    skillsWriter.savePendingStatusCard();
+    await processEvent(filesReader, skillsWriter, callback);
   } else {
-    console.log('Invalid event');
+    await skillsWriter.saveErrorStatusCard(SkillsErrorEnum.INVALID_EVENT);
     callback(null, { statusCode: 200, body: 'Event received but invalid' });
   }
 };
@@ -20,23 +24,22 @@ function isValidEvent(triggeredEvent) {
   return triggeredEvent.body
 };
 
-async function processEvent(triggeredEvent, finalCallback) {
-  const { body } = triggeredEvent;
-  const box = new Box(body);
+async function processEvent(filesReader, skillsWriter, finalCallback) {
+  const box = new Box(filesReader, skillsWriter);
 
   try {  
-      const tempFilePath = await box.downloadFileFromBox();
-      const rossumMetadata = await sendToRossum(tempFilePath)
+    const tempFilePath = await box.downloadFileFromBox();
+    const rossumMetadata = await sendToRossum(tempFilePath)
 
-      await box.attachMetadataCard(rossumMetadata); // process Rossum json object and attach Box Skills card as metadata
-      console.log('Successfully attached skill metadata to Box file');
+    await box.attachMetadataCard(rossumMetadata); // process Rossum json object and attach Box Skills card as metadata
+    console.log('Successfully attached Skills metadata to Box file');
 
-      finalCallback(null, { statusCode: 200, body: 'Custom Skill Success' });
+    finalCallback(null, { statusCode: 200, body: 'It was a resounding success.' });
       
-    } catch (error) {
-        console.log(error);
-        finalCallback(null, { statusCode: 200, body: 'Error' });
-    }
+  } catch (error) {
+      skillsWriter.saveErrorStatusCard(SkillsErrorEnum.UNKNOWN);
+      finalCallback(null, { statusCode: 200, body: 'Unknown error occurred somewhere along the line.' });
+  }
 }
 
 async function sendToRossum(filePath) {
