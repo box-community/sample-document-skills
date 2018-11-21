@@ -1,46 +1,4 @@
-# Setup instructions
-
-1. Sign up for a [Box Developer account](https://account.box.com/signup/n/developer#nql6m). Create a new Box app...
-
-2. Sign up for a [Rossum Developer](https://account.box.com/signup/n/developer#nql6m) account.
-
-3. Configure Serverless! 
-
-`npm install -g serverless` 
-
-Then in order to give Serverless access to your AWS account, you'll need to create a new IAM User with admin access. Here's how to do that:
-
-⋅⋅* Create or log in to your Amazon Web Services account
-⋅⋅* Go to the Identity & Access Management (IAM) page
-⋅⋅* Click on Users and then Add user.
-⋅⋅* Enter a name in the first field to remind you this User is Serverless, like serverless-admin.
-⋅⋅* Enable Programmatic access by clicking the checkbox.
-⋅⋅* Click Next to go through to the Permissions page.
-⋅⋅* Click on Attach existing policies directly.
-⋅⋅* Search for, and select AdministratorAccess then click Next: Review.
-⋅⋅* Check everything looks good and click Create user.
-⋅⋅* View and copy the API Key & Secret to a temporary place. You'll need it in the next step.
-
-
-4. Next, run:
-
-`serverless config credentials --provider aws --key YOURAPIKEY --secret YOURSECRET` 
-
-with the keys obtained from the last step above. Lastly, create your Serverless project!
-
-`serverless create --template aws-nodejs --path MySkillFunction`
-`cd MySkillFunction`
-
-
-5. Clone this repo in the serverless project you created in step 4, then fill in the environment variables in the serverless.yml file. The `BOX_CLIENT_ID` and `BOX_CLIENT_SECRET` can be found in the configuration section of the Box app you created above, while the `ROSSUM_SECRET_KEY` is obtained from Rossum.
-
-
-6. Deploy the app to AWS! 
-
-`serverless deploy -v`. 
-
-For subsequent edits, you can simply use `serverless deploy -v -f index`, which will quickly overwrite any changes you make to your function.
-
+![Rossum Custom Skill](/sample_rossum_custom_skill.png)
 
 # Frequently Asked Questions
 
