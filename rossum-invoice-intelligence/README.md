@@ -1,4 +1,4 @@
-![Rossum Custom Skill](./sample_rossum_custom_skill.png)
+![Rossum Custom Skill](./sample_invoice.png)
 
 # Frequently Asked Questions
 
@@ -6,12 +6,12 @@
 According to the official [Box Skills developer documentation](https://developer.box.com/docs/box-skills), a Box Skill is "a type of application that performs custom processing for files uploaded to Box." I couldn't have said it better myself. In this case, when an invoice or invoice-like document is uploaded to Box, we will send it to an ML service called Rossum.ai which extracts certain key information from the invoice.
 
 ## What is Rossum?
-Rossum is an invoice data capture tool that specializes in extracting fields common to your typical invoice. The data returned from Rossum could include fields like amount, tax details, invoice ID, or sender and receiver name. The smart scientists at Rossum have trained a model such that these fields will be identified with consistently high degrees of accuracy.
+[Rossum](https://rossum.ai/developers) is an invoice data capture tool that specializes in extracting fields common to your typical invoice. The data returned from Rossum could include fields like amount, tax details, invoice ID, or sender and receiver name. The smart scientists at Rossum have trained a model such that these fields will be identified with consistently high degrees of accuracy.
 
-## Who would use this skill?
-If you have ever manually entered any data from an invoice, then this skill might be for you. And particularly if your invoices participate in any sort of workflow, with data in the invoice indicating where in your enterprise the document should end up and who should see it. All of this can now be automated.
+## Who might use this Skill?
+If you have ever manually entered any data from an invoice, then this Skill might be for you. And particularly if your invoices participate in any sort of workflow, with data in the invoice indicating where in your enterprise the document should end up and who should see it. All of this can now be automated.
 
-## What types of files does the skill handle?
+## What types of files does the Skill handle?
 You'll be able to upload either PDFs or images of invoices. With regard to images, Rossum requests that the quality be at least 150 dots per inch. 
 
 ## What metadata is written back to my Box file?
