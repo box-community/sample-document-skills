@@ -9,16 +9,16 @@
  `npm install -g serverless` 
 
  Then in order to give Serverless access to your AWS account, you'll need to create a new IAM User with admin access. Here's how to do that:
-⋅⋅* Create or log in to your Amazon Web Services account
-⋅⋅* Go to the Identity & Access Management (IAM) page
-⋅⋅* Click on Users and then Add user.
-⋅⋅* Enter a name in the first field to remind you this User is Serverless, like serverless-admin.
-⋅⋅* Enable Programmatic access by clicking the checkbox.
-⋅⋅* Click Next to go through to the Permissions page.
-⋅⋅* Click on Attach existing policies directly.
-⋅⋅* Search for, and select AdministratorAccess then click Next: Review.
-⋅⋅* Check everything looks good and click Create user.
-⋅⋅* View and copy the API Key & Secret to a temporary place. You'll need it in the next step.
+  * Create or log in to your Amazon Web Services account
+  * Go to the Identity & Access Management (IAM) page
+  * Click on Users and then Add user.
+  * Enter a name in the first field to remind you this User is Serverless, like serverless-admin.
+  * Enable Programmatic access by clicking the checkbox.
+  * Click Next to go through to the Permissions page.
+  * Click on Attach existing policies directly.
+  * Search for, and select AdministratorAccess then click Next: Review.
+  * Check everything looks good and click Create user.
+  * View and copy the API Key & Secret to a temporary place. You'll need it in the next step.
 
  3. Next, run:
 
