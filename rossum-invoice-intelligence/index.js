@@ -12,10 +12,10 @@ exports.handler = async (triggeredEvent, context, callback) => {
   const skillsWriter = new SkillsWriter(filesReader.getFileContext());
 
   if (isValidEvent(triggeredEvent)) {
-    skillsWriter.savePendingStatusCard();
+    skillsWriter.saveProcessingCard();
     await processEvent(filesReader, skillsWriter, callback);
   } else {
-    await skillsWriter.saveErrorStatusCard(SkillsErrorEnum.INVALID_EVENT);
+    await skillsWriter.saveErrorCard(SkillsErrorEnum.INVALID_EVENT);
     callback(null, { statusCode: 200, body: 'Event received but invalid' });
   }
 };
@@ -37,7 +37,7 @@ async function processEvent(filesReader, skillsWriter, finalCallback) {
     finalCallback(null, { statusCode: 200, body: 'It was a resounding success.' });
       
   } catch (error) {
-      skillsWriter.saveErrorStatusCard(SkillsErrorEnum.UNKNOWN);
+      skillsWriter.saveErrorCard(SkillsErrorEnum.UNKNOWN);
       finalCallback(null, { statusCode: 200, body: 'Unknown error occurred somewhere along the line.' });
   }
 }
