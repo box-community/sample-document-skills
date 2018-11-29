@@ -4,7 +4,7 @@ Use the [Rossum API](https://rossum.ai/developers) to automatically extract data
 
 [Rossum](https://rossum.ai/) is an invoice data capture tool that specializes in extracting fields common to your typical invoice. The data returned from Rossum can include fields like amount, tax details, invoice ID, sender name and receiver name.
 
-![Rossum Custom Skill](./sample_invoice.png)
+![Rossum Custom Skill](./docs/sample_invoice.png)
 
 ## Usage
 

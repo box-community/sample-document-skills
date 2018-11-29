@@ -1,6 +1,6 @@
 
-const Box = require('./Helpers/box.js')
-const Rossum = require('./Helpers/rossum.js');
+const Box = require('./helpers/box.js')
+const Rossum = require('./helpers/rossum.js');
 const { FilesReader, SkillsWriter, SkillsErrorEnum } = require('./skills-kit-lib/skills-kit-2.0');
 
 /**
