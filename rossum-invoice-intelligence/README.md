@@ -23,13 +23,7 @@ To use Serverless, install the NPM module.
 npm install -g serverless
 ```
 
-Then in order to give Serverless access to your AWS account, you'll need to create a new AWS IAM User with admin access. There is an excellent guide available on [serverless.com](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
-
-Next, you can configure the local Serverless install with your credentials:
-
-```bash
-serverless config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_ACCESS_KEY
-```
+Next, follow our guide on [configuring Serverless for AWS](../AWS_CONFIGURATION.md), or any of the guides on [serverless.com](https://serverless.com/) to allow deploying to your favorite serverless provider.
 
 ### Deploying
 
