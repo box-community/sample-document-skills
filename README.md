@@ -2,7 +2,7 @@
 
 These are community created Box Skills samples for processing **document files** on Box. 
 
-* [Rossum invoice intelligence](sample-document-skills) - Uses the [Rossum](https://rossum.ai/) API to automatically extract data from invoices and attach them to your files as metadata.
+* [Rossum invoice intelligence](rossum-invoice-intelligence) - Uses the [Rossum](https://rossum.ai/) API to automatically extract data from invoices and attach them to your files as metadata.
 
 ## What are Box Skills?
 
