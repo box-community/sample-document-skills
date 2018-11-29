@@ -50,7 +50,7 @@ functions:
       ROSSUM_SECRET_KEY: YOUR_ROSSUM_SECRET_KEY
 ```
 
-Finally, deploy the app.
+Finally, deploy the Skill.
 
 ```bash
 serverless deploy -v
