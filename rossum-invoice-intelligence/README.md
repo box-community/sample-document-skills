@@ -1,6 +1,8 @@
 # Rossum Invoice Intelligence 
 
-Use the [Rossum API](https://rossum.ai/) to automatically extract data from invoices and attach them to your files as metadata.
+Use the [Rossum API](https://rossum.ai/developers) to automatically extract data from invoices and attach them to your files as metadata.
+
+[Rossum](https://rossum.ai/) is an invoice data capture tool that specializes in extracting fields common to your typical invoice. The data returned from Rossum can include fields like amount, tax details, invoice ID, sender name and receiver name.
 
 ![Rossum Custom Skill](./sample_invoice.png)
 
@@ -55,3 +57,23 @@ Finally, deploy the Skill.
 ```bash
 serverless deploy -v
 ```
+
+## Frequently Asked Questions
+
+### Who might use this Skill?
+If you have ever manually entered any data from an invoice, then this Skill might be for you. And particularly if your invoices participate in any sort of workflow, with data in the invoice indicating where in your enterprise the document should end up and who should see it. All of this can now be automated.
+
+### What types of files does this Skill handle?
+This skill can both handle PDFs and images. With regard to images, Rossum requests that the quality be at least 150 dots per inch. 
+
+### What metadata is written back to my Box file?
+You'll be able to specify exactly which fields you care about writing as metadata to your file in Box. A complete list of fields returned by Rossum can be found in [Rossum's developer documentation](https://rossum.ai/developers/api/field_types).
+
+Importantly, Rossum returns multiple results per field, each with a confidence score. In our skill we take only the highest score, so that we only end up with one sender name, one amount due, etc. that is most likely to be the field we actually care about.
+
+The metadata is then posted as a Box Skills Transcript card. More information on [Box Skills metadata cards](https://developer.box.com/docs/box-skills) is available. 
+
+### What implications does this have for my business?
+Using Box with Rossum has the potential to eliminate enormous ammounts of manual data entry using automated data capture that matches human levels of accuracy.
+
+Additionally, the Box API can then kick off specific tailored workflows based on the returned metadata, like copying and moving files, flagging unpaid invoices, or adding retention policies based on dates. 
