@@ -1,7 +1,6 @@
-
-const Box = require('./helpers/box.js')
-const Rossum = require('./helpers/rossum.js');
-const { FilesReader, SkillsWriter, SkillsErrorEnum } = require('./skills-kit-lib/skills-kit-2.0');
+const Box = require('./utils/box.js')
+const Rossum = require('./utils/rossum.js');
+const { FilesReader, SkillsWriter, SkillsErrorEnum } = require('./skills-kit-2.0');
 
 /**
  * This is the main function that the Lambda will call when invoked.

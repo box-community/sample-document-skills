@@ -13,7 +13,7 @@ Use the [Rossum API](https://rossum.ai/developers) to automatically extract data
 * Make sure to sign up for a [Rossum Developer](https://account.box.com/signup/n/developer#nql6m) account and obtain a Rossum API secret key.
 * Make sure to sign up for a [Box Developer](https://developer.box.com/) account and prepare your app for Box skills. See our [developer documentation](https://developer.box.com/docs/box-skills) for more guidance. 
 
-### Configuring Serverless for AWS
+### Configuring Serverless
 
 Our Box skills uses the excellent [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms, but in this example we will use AWS as an example.
 
