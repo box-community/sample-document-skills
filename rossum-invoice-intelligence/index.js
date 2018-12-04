@@ -6,8 +6,8 @@ const { FilesReader, SkillsWriter, SkillsErrorEnum } = require('./skills-kit-2.0
  * This is the main function that the Lambda will call when invoked.
  */
 exports.handler = async (triggeredEvent, context, callback) => {
-  const { fileInfo } = triggeredEvent;
-  const filesReader = new FilesReader(fileInfo);
+  const { body } = triggeredEvent;
+  const filesReader = new FilesReader(body);
   const skillsWriter = new SkillsWriter(filesReader.getFileContext());
 
   if (isValidEvent(triggeredEvent)) {
