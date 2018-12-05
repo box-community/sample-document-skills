@@ -7,13 +7,13 @@ provider:
 functions:
   index:
     handler: index.handler
-    name: RossumCustomSkill
+    name: skill
     runtime: nodejs8.10
-    timeout: 120
+    timeout: 30
     events:
       - http:
           method: POST
-          path: RossumCustomSkill
+          path: skill
           cors: true
     environment:
       ROSSUM_SECRET_KEY: YOUR_ROSSUM_SECRET_KEY
