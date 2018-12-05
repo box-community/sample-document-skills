@@ -10,7 +10,7 @@ Use the [Rossum API](https://rossum.ai/developers) to automatically extract data
 
 ### Prerequisites
 
-* Make sure to sign up for a [Rossum Developer](https://account.box.com/signup/n/developer#nql6m) account and obtain a Rossum API secret key.
+* Make sure to sign up for a [Rossum Developer](https://rossum.ai/developers) account and obtain a Rossum API secret key.
 * Make sure to sign up for a [Box Developer](https://developer.box.com/) account and prepare your app for Box skills. See our [developer documentation](https://developer.box.com/docs/box-skills) for more guidance. 
 
 ### Configuring Serverless
