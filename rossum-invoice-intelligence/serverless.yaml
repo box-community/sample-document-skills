@@ -9,7 +9,7 @@ functions:
     handler: index.handler
     name: skill
     runtime: nodejs8.10
-    timeout: 900
+    timeout: 120
     events:
       - http:
           method: POST
