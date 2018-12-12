@@ -7,7 +7,7 @@ This example uses the [Leverton](https://www.leverton.ai/) data extraction platf
 ### Getting started with Leverton
 
 Obtain a Leverton access token, root project ID, and default collection ID and populate these variables
-in a local .env (rename .env.sample to .env) file (LEVERTON_AUTH_TOKEN, LEVERTON_PROJECT_ID, DEFAULT_COLLECTION_ID)
+in your local .env file (rename .env.sample to .env).
 
 ### Deploying
 
