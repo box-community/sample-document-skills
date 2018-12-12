@@ -1,0 +1,18 @@
+{
+  "name": "leverton-lease-extractor",
+  "version": "2.0.0",
+  "description": "Box / Leverton Custom Skill",
+  "scripts": {
+    "test": "mocha tests/*-tests.js",
+    "zip": "zip -X -r ../leverton-lease-extractor-skill.zip *",
+    "deploy": "aws lambda update-function-code --function-name CustomBoxLevertonSkill --zip-file fileb://../leverton-lease-extractor-skill.zip"
+  },
+  "author": "Matt Mitchell",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
+    "moment": "^2.22.1",
+    "request": "^2.85.0"
+  }
+}
