@@ -8,7 +8,7 @@ This example uses the [Leverton](https://www.leverton.ai/) data extraction platf
 
 ### Prerequisites
 
-* [Leverton](https://www.leverton.ai/) does not currently have a publicly available API. You must reach out to Leverton and request a Leverton account / access to their API.
+* [Leverton](https://www.leverton.ai/) does not currently have an Open API. You must reach out to Leverton and request a Leverton account / access to their API.
 * Make sure to sign up for a [Box Developer](https://developer.box.com/) account and prepare your app for Box skills. See our [developer documentation](https://developer.box.com/docs/box-skills) for more guidance.
 
 ### Configuring Serverless
