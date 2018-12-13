@@ -4,21 +4,16 @@ This example uses the [Leverton](https://www.leverton.ai/) data extraction platf
 
 ![screenshot](./screenshots/sample-lease-extraction.png)
 
-### Getting started with Leverton
-
-Obtain a Leverton access token, root project ID, and default collection ID and populate these variables
-in your local .env file.
-
 ## Usage
 
 ### Prerequisites
 
-* Leverton does not currently have a publicly available API. You must reach out to Leverton in order to create a Leverton account and gain access to their API.
+* [Leverton](https://www.leverton.ai/) does not currently have a publicly available API. You must reach out to Leverton and request a Leverton account / access to their API.
 * Make sure to sign up for a [Box Developer](https://developer.box.com/) account and prepare your app for Box skills. See our [developer documentation](https://developer.box.com/docs/box-skills) for more guidance.
 
 ### Configuring Serverless
 
-Our Box skills uses the excellent [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms, but in this example we will use AWS as an example.
+This Box skill uses the [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms (this example uses AWS).
 
 To use Serverless, install the NPM module.
 
@@ -43,7 +38,7 @@ Then update the environment variables `serverless.yml` with the appropriate IDs 
 ...
 
 functions:
-  index:
+    leverton-custom-skill:
     ...
     environment:
       LEVERTON_AUTH_TOKEN: <your-leverton-auth-token>
