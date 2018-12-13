@@ -1,0 +1,21 @@
+service: LevertonCustomSkill
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-west-1
+
+functions:
+  leverton-custom-skill:
+    handler: index.handler
+    name: leverton-custom-skill
+    runtime: nodejs8.10
+    timeout: 300
+    events:
+      - http:
+          method: POST
+          path: skill
+          cors: true
+    environment:
+      LEVERTON_AUTH_TOKEN: <your-leverton-auth-token>
+      LEVERTON_PROJECT_ID: <your-project-id>
+      DEFAULT_COLLECTION_ID: <your-default-collection-id>
