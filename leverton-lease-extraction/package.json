@@ -1,0 +1,13 @@
+{
+  "name": "leverton-lease-extraction",
+  "version": "2.0.0",
+  "description": "Box / Leverton Custom Skill",
+  "author": "Matt Mitchell",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
+    "moment": "^2.22.1",
+    "request": "^2.85.0"
+  }
+}
