@@ -13,7 +13,7 @@ This example uses the [Leverton](https://www.leverton.ai/) data extraction platf
 
 ### Configuring Serverless
 
-This Box skill uses the [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms (this example uses AWS).
+Our Box skills uses the excellent [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms, but in this example we will use AWS as an example.
 
 To use Serverless, install the NPM module.
 
@@ -52,4 +52,4 @@ Finally, deploy the Skill.
 serverless deploy -v
 ```
 
-*note: this custom skill takes around 2-5 minutes to process after lease document upload
+Once your new skill is called by our code, the Skill usually takes around two to five minutes to process and write the new metadtaa to the file.
