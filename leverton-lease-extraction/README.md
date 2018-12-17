@@ -54,7 +54,7 @@ serverless deploy -v
 
 At the end of this, you will have an invocation URL for your Lambda function. 
 
-### Configuring your skill
+### Set the invocation URL
 
 The final step is to [configure your Box Skill with the invocation URL](https://developer.box.com/docs/configure-a-box-skill) for your Lambda function. You should have received this in the previous, after you deployed the function for the first time.
 
