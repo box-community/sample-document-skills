@@ -39,7 +39,7 @@ async function processSkill(event, context) {
     await skillsWriter.saveDataCards(cards);
     console.log("Successfully attached skill metadata to Box file");
   } catch(error) {
-    console.log("Error " + error);
+    console.log(error);
     // await skillsWriter.saveErrorCard(SkillsErrorEnum.UNKNOWN);
   }
 }
@@ -104,19 +104,6 @@ function populateMetadataCards(levertonMetadata) {
 
   tempCard = formatCardTopics(
     {
-      RenterName: "Landlord",
-      RenteeName: "Tenant",
-      RentalStreet: "Street",
-      RentalStreetNumber: "Street #",
-      RentalCity: "City",
-      RentalZip: "Zip Code",
-      RentalCountry: "Country"
-    },
-    levertonMetadata)
-  cards.push(skillsWriter.createTopicsCard(tempCard, null, "Property Information"));
-
-  tempCard = formatCardTopics(
-    {
       UDMBaseRentMonthlyAmount: "Monthly Rent",
       UDMBaseRentAmount: "Annual Rent",
       UDMBaseRentAnnualAmount: "Annual Rent",
@@ -130,6 +117,19 @@ function populateMetadataCards(levertonMetadata) {
     },
     levertonMetadata)
   cards.push(skillsWriter.createTopicsCard(tempCard, null, "Payment Information"));
+
+  tempCard = formatCardTopics(
+    {
+      RenewalBeneficiary: "Renewal Beneficiary",
+      RenewalDuration: "Renewal Duration",
+      RenewalTimes: "Number of Renewals",
+      ContractStart: "Contract Start Date",
+      ContractDurationDate: "Contract Duration Date",
+      ContractDurationMain: "Contract Duration"
+
+    },
+    levertonMetadata)
+  cards.push(skillsWriter.createTopicsCard(tempCard, null, "Renewals"));  
 
   tempCard = formatCardTopics(
     { UDMPurposeUsageUS: "Permitted Use"},
