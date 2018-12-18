@@ -8,12 +8,12 @@ This example uses the [Leverton](https://www.leverton.ai/) data extraction platf
 
 ### Prerequisites
 
-* [Leverton](https://www.leverton.ai/) does not currently have an Open API. You must reach out to Leverton and request a Leverton account / access to their API.
+* [Leverton](https://www.leverton.ai/) does not currently have a self-service API. You must reach out to Leverton and request a Leverton account / access to their API.
 * Make sure to sign up for a [Box Developer](https://developer.box.com/) account and prepare your app for Box skills. See our [developer documentation](https://developer.box.com/docs/box-skills) for more guidance.
 
 ### Configuring Serverless
 
-This Box skill uses the [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms (this example uses AWS).
+Our Box skills uses the excellent [Serverless framework](https://serverless.com/). This framework allows for deployment to various serverless platforms, but in this example we will use AWS as an example.
 
 To use Serverless, install the NPM module.
 
@@ -52,4 +52,29 @@ Finally, deploy the Skill.
 serverless deploy -v
 ```
 
-*note: this custom skill takes around 2-5 minutes to process after lease document upload
+At the end of this, you will have an invocation URL for your Lambda function. 
+
+### Set the invocation URL
+
+The final step is to [configure your Box Skill with the invocation URL](https://developer.box.com/docs/configure-a-box-skill) for your Lambda function. You should have received this in the previous, after you deployed the function for the first time.
+
+Once your new skill is called by our code, the Skill usually takes around two to five minutes to process and write the new metadata to the file.
+
+## Frequently Asked Questions
+
+### Who might use this Skill?
+
+If you have ever manually identify information in a rental lease agreement, then this Skill is for you. This Skill turns a labourious process into an one that requires no human interaction.
+
+### What types of files does this Skill handle?
+
+This skill can handle `.pdf` files and images.
+
+### What metadata is written back to my Box file?
+
+The Leverton API supports many different types of information that can be extracted from your files, including the rental dates, owners, landlord names, adresses, tenant names, and more.
+
+### What implications does this have for my business?
+Using Box with Leverton has the potential to eliminate enormous ammounts of manual data entry using automated data capture that matches human levels of accuracy.
+
+Additionally, the Box API can then kick off use case-specific workflows based on the returned metadata, like validating fraudulent applicants, flagging expired agreements, or adding retention policies based on dates.
