@@ -16,6 +16,6 @@ functions:
           path: skill
           cors: true
     environment:
-      LEVERTON_AUTH_TOKEN: <your-leverton-auth-token>
-      LEVERTON_PROJECT_ID: <your-project-id>
-      DEFAULT_COLLECTION_ID: <your-default-collection-id>
+      LEVERTON_AUTH_TOKEN: bW1pdGNoZWxsQGJveC5jb206NTQyRHZTWm9PRmoxVTladCE=
+      LEVERTON_PROJECT_ID: 330
+      DEFAULT_COLLECTION_ID: 65579
