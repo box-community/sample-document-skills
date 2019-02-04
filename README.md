@@ -28,6 +28,11 @@ You can expand the effective set of file formats supported by your machine learn
 
 In developing your custom Box Skill, you would need to deploy it somewhere. Have a look at our [Quick Start Deployment Instructions](https://github.com/box/box-skills-kit-nodejs/tree/master/boilerplate-skills) to learn how to deploy the boilerplate Skills to any of your preferred cloud server providers or on your own server environment. Additionally, each of the sample Skills in this repository may give extra or alternative deployment instructions, that you can use.
 
+## Contributors
+
+* [Matt Mitchell](https://github.com/mattmitchell6), Box
+* [Phil Mayer](https://github.com/PhilMayer), Box
+
 ## License
 
 This project is licensed under the [Apache 2.0 License](LICENSE)
