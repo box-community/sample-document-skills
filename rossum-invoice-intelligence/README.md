@@ -1,5 +1,7 @@
 # Rossum Invoice Intelligence 
 
+> **Deprecation notice:** Rossum has changed their authentication since we wrote this sample, and as a result this sample no longer works as is.
+
 Use the [Rossum API](https://rossum.ai/developers) to automatically extract data from invoices and attach them to your files as metadata.
 
 [Rossum](https://rossum.ai/) is an invoice data capture tool that specializes in extracting fields common to your typical invoice. The data returned from Rossum can include fields like amount, tax details, invoice ID, sender name and receiver name.
